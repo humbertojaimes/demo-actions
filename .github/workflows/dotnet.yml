@@ -18,10 +18,9 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore src/DemoActionsAPI/DemoActionsAPI/DemoActionsAPI.csproj
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore src/DemoActionsAPI/DemoActionsAPI/DemoActionsAPI.csproj
     - name: publish
-      run: dotnet publish
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet publish src/DemoActionsAPI/DemoActionsAPI/DemoActionsAPI.csproj
+
